@@ -7,6 +7,11 @@ return require("packer").startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.4",
 		requires = { { "nvim-lua/plenary.nvim" } },
+		pickers = {
+			colorscheme = {
+				enable_preview = true,
+			},
+		},
 	})
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
@@ -31,7 +36,8 @@ return require("packer").startup(function(use)
 	})
 
 	use("jose-elias-alvarez/null-ls.nvim")
-	use({ "nyoom-engineering/oxocarbon.nvim" })
+	use({ "projekt0n/github-nvim-theme" })
+
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
