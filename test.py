@@ -1,5 +1,0 @@
-foo = "this"
-
-print(foo)
-
-
