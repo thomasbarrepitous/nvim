@@ -16,3 +16,4 @@ crash.log
 *.box
 
 packer_compiled.lua
+pack/

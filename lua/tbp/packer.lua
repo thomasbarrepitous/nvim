@@ -7,11 +7,6 @@ return require("packer").startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.4",
 		requires = { { "nvim-lua/plenary.nvim" } },
-		pickers = {
-			colorscheme = {
-				enable_preview = true,
-			},
-		},
 	})
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
@@ -44,4 +39,5 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
+	use({ "github/copilot.vim" })
 end)
