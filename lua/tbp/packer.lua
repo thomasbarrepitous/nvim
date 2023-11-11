@@ -10,8 +10,8 @@ return require("packer").startup(function(use)
 		tag = "0.1.4",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+	use("lukas-reineke/indent-blankline.nvim")
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use({
