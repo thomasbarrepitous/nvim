@@ -4,6 +4,8 @@ sources = {
 	null_ls.builtins.diagnostics.eslint,
 	null_ls.builtins.completion.spell,
 	null_ls.builtins.formatting.black,
+	null_ls.builtins.formatting.gofumpt,
+	null_ls.builtins.formatting.goimports_reviser,
 }
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
@@ -14,7 +16,6 @@ local on_attach = function(client, bufnr)
 			group = augroup,
 			buffer = bufnr,
 			callback = function()
-				-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
 				vim.lsp.buf.format({ bufnr = bufnr })
 			end,
 		})
