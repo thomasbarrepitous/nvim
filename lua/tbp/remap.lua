@@ -53,11 +53,12 @@ vim.keymap.set("n", "<leader>gor", "<cmd>GoRemoveTags<CR>")
 
 -- -- Go Debug
 vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>")
-vim.keymap.set("n", "<leader>gdc", "<cmd>DapContinue<CR>")
-vim.keymap.set("n", "<leader>gds", "<cmd>DapStepOver<CR>")
-vim.keymap.set("n", "<leader>gdi", "<cmd>DapStepInto<CR>")
-vim.keymap.set("n", "<leader>gdo", "<cmd>DapStepOut<CR>")
+-- Conflict with telescope for now so disabled
+-- vim.keymap.set("n", "<leader>gds", "<cmd>DapStepOver<CR>")
+vim.keymap.set("n", "<leader>goc", "<cmd>DapContinue<CR>")
+-- vim.keymap.set("n", "<leader>gdi", "<cmd>DapStepInto<CR>")
+-- vim.keymap.set("n", "<leader>gdo", "<cmd>DapStepOut<CR>")
 vim.keymap.set("n", "<leader>dus", function()
-    local dapui = require("dapui")
-    dapui.toggle()
+	local dapui = require("dapui")
+	dapui.toggle()
 end)
