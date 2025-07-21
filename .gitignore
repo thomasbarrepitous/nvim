@@ -17,3 +17,7 @@ crash.log
 
 packer_compiled.lua
 pack/
+
+node_modules/
+bun.lock
+.eslintrc.js
