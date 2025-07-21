@@ -1,2 +1,2 @@
-require("dapui").setup()
-require("dap-go").setup()
+-- require("dapui").setup()
+-- require("dap-go").setup()

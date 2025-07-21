@@ -8,7 +8,8 @@ end)
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-    ensure_installed = { "pyright", "lua_ls", "gopls", "templ", "html", "tailwindcss" },
+    ensure_installed = { "pyright", "lua_ls", "html", "tailwindcss", "ts_ls", "eslint" },
+    automatic_installation = true,
     handlers = {
         lsp_zero.default_setup,
         require("lspconfig").lua_ls.setup(lsp_zero.nvim_lua_ls({
@@ -17,9 +18,19 @@ require("mason-lspconfig").setup({
                 print("LSP !")
             end,
         })),
-        require("lspconfig").gopls.setup({}),
-        require("lspconfig").templ.setup({}),
+        require("lspconfig").ts_ls.setup({}),
+        -- require("lspconfig").gopls.setup({}),
+        -- require("lspconfig").templ.setup({}),
         require("lspconfig").html.setup({ filetypes = { "html", "templ" } }),
         require("lspconfig").tailwindcss.setup({}),
+        require("lspconfig").svelte.setup({}),
+        require("lspconfig").eslint.setup({
+            on_attach = function(client, bufnr)
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    buffer = bufnr,
+                    command = "EslintFixAll",
+                })
+            end,
+        }),
     },
 })
